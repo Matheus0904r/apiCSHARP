@@ -34,9 +34,18 @@ void PopularBancoDeDados(WebApplication app)
 
     if (Dados.Locacoes.Any()) { return; }
 
+    var imoveisIniciais = new List<Imovel>
+    {
+        new() { Id = "Apartamento", Endereco = "Rua A, 123", ValorAluguel = 1500, Metragem = 50 },
+        new() { Id = "Casa", Endereco = "Rua B, 456", ValorAluguel = 2000, Metragem = 100 },
+        new() { Id = "Cobertura", Endereco = "Rua C, 789", ValorAluguel = 3000, Metragem = 150 }
+    };
+
     var locacoesIniciais = new List<Pessoa>
     {
-        new() {}
+        new() { Id = 1, Nome = "João", Sobrenome = "Silva", CPF = "123.456.789-00", IdImovel = 1 },
+        new() { Id = 2, Nome = "Maria", Sobrenome = "Oliveira", CPF = "987.654.321-00", IdImovel = 2 },
+        new() { Id = 3, Nome = "Pedro", Sobrenome = "Santos", CPF = "456.789.123-00", IdImovel = 3 }
     };
 
     Dados.Locacoes.AddRange(locacoesIniciais);
