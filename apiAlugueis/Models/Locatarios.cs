@@ -1,6 +1,9 @@
-namespace apiAlugueis.Models
+using apiAlugueis.Models;
+using apiAlugueis.Models.Pessoa;
+
+namespace apiAlugueis.Models.Locatarios
 {
-    public class Locatario : DbContext
+    public class Locatarios : DbContext
     {
         public Locatarios(DbContextOptions<Locatarios> options) : base(options) { }
         public DbSet<Pessoa> Locatarios { get; set; }

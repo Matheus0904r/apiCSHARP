@@ -1,4 +1,6 @@
-using apiAlugueis.Models;
+
+using apiAlugueis.Models.Locatarios;
+
 public static class Rota_DELETE
 {
     public static void MapDeleteRoutes(this WebApplication app)
@@ -12,6 +14,6 @@ public static class Rota_DELETE
             await Dados.SaveChangesAsync();
             return Results.Ok();
 
-        })
+        });
     }
 }

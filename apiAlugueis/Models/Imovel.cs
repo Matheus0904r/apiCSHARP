@@ -2,9 +2,9 @@ namespace apiAlugueis.Models
 {
     public class Imovel
     {
-        public int Id { get; set; }
-        public string Endereco { get; set; }
-        public float Preco { get; set; }
-        public float Metragem { get; set; }
+        public int id { get; set; }
+        public string endereco { get; set; }
+        public float valor { get; set; }
+        public float metragem { get; set; }
     }
 }
