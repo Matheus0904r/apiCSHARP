@@ -4,11 +4,11 @@ public static class Rota_POST
 {
     public static void MapPostRoutes(this WebApplication app)
     {
-        app.MapPost("/alugueis", async (Aluguel aluguel, Alugueis Dados) =>
+        app.MapPost("/alugueis", async (Pessoa pessoa, Locatarios Dados) =>
         {
-            Dados.Alugueis.Add(aluguel);
+            Dados.Locatarios.Add(pessoa);
             await Dados.SaveChangesAsync();
-            return Results.Created($"/alugueis/{aluguel.Id}", aluguel);
+            return Results.Created($"/alugueis/{pessoa.Id}", pessoa);
         });
     }
 }

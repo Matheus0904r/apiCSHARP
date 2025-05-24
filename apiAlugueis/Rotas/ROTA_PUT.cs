@@ -6,21 +6,15 @@ public static class Rota_PUT
 {
     public static void MapPutRoutes(this WebApplication app)
     {
-        app.MapPut("/alugueis/{id}", async (int id, Imovel imovel, Locatarios Dados) =>
+        app.MapPut("/alugueis/{id}", async (int id, Pessoa pessoa, Locatarios Dados) =>
         {
-            // var imovel = await Dados.Alugueis.FindAsync(id);
-            // if (imovel is null) return Results.NotFound();
+            var imovel = await Dados.Locatarios.FindAsync(id);
+            if (imovel is null) return Results.NotFound();
 
+            pessoa.id_imovel = imovel.id;
             
-
-            // livro.TituloLivro = input.TituloLivro;
-            // livro.AutorLivro = input.AutorLivro;
-            // livro.Ano = input.Ano;
-            // livro.TipoMaterial = input.TipoMaterial;
-            // livro.Citacao = input.Citacao;
-
-            // await context.SaveChangesAsync();
-            // return Results.Ok(livro);
+            await Dados.SaveChangesAsync();
+            return Results.Ok(pessoa);
         });
     }
 }
