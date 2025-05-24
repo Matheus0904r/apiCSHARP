@@ -1,6 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using apiAlugueis.Models;
+using apiAlugueis.Rotas;
+
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+builder.Services.AddDbContext<Alugueis>(options => options.UseSqlite("Data Source=alugueis.db"));
