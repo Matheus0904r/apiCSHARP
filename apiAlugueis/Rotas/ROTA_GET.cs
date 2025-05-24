@@ -7,16 +7,16 @@ namespace apiCSHARP.Rotas
     {
         public static void MapGetRoutes(this WebApplication app)
         {
-            app.MapGet("/alugueis", async(Alugueis Dados) =>
+            app.MapGet("/alugueis", async(Locatarios Dados) =>
             {
-                var alugueis = await Dados.Alugueis.ToListAsync();
-                return Results.Ok(alugueis);
+                var locacoes = await Dados.Locatarios.ToListAsync();
+                return Results.Ok(locacoes);
             })
 
-            app.MapGet("/alugueis/{id}", async(int id, Alugueis Dados) =>
+            app.MapGet("/alugueis/{id}", async(int id, Locatarios Dados) =>
             {
-                var aluguel = await Dados.Alugueis.FindAsync(id);
-                return aluguel is not null ? Results.Ok(aluguel) : Results.NotFound();
+                var locacao = await Dados.Locatarios.FindAsync(id);
+                return locacao is not null ? Results.Ok(locacao) : Results.NotFound();
             })
         }
     }
