@@ -1,6 +1,0 @@
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.AssemblyInfoInputs.cache
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.AssemblyInfo.cs
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.csproj.CoreCompileInputs.cache
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\mathe\Downloads\apiC#\apiAlugueis\obj\Debug\net9.0\apiAlugueis.sourcelink.json
