@@ -7,13 +7,13 @@ namespace apiCSHARP.apiAluguel.Rotas
     {
         public static void MapGetRoutes(this WebApplication app)
         {
-            app.MapGet("/alugueis", async (Locatarios Dados) =>
+            app.MapGet("/api/alugueis", async (Locatarios Dados) =>
             {
                 var locacoes = await Dados.Locacoes.ToListAsync();
                 return Results.Ok(locacoes);
             });
 
-            app.MapGet("/alugueis/{id}", async (int id, Locatarios Dados) =>
+            app.MapGet("/api/alugueis/{id}", async (int id, Locatarios Dados) =>
             {
                 var locacao = await Dados.Locacoes.FindAsync(id);
                 return locacao is not null ? Results.Ok(locacao) : Results.NotFound();
