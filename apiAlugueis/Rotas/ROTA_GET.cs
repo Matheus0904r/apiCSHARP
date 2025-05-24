@@ -9,13 +9,13 @@ namespace apiCSHARP.Rotas
         {
             app.MapGet("/alugueis", async(Locatarios Dados) =>
             {
-                var locacoes = await Dados.Locatarios.ToListAsync();
+                var locacoes = await Dados.Locacoes.ToListAsync();
                 return Results.Ok(locacoes);
             });
 
             app.MapGet("/alugueis/{id}", async(int id, Locatarios Dados) =>
             {
-                var locacao = await Dados.Locatarios.FindAsync(id);
+                var locacao = await Dados.Locacoes.FindAsync(id);
                 return locacao is not null ? Results.Ok(locacao) : Results.NotFound();
             });
         }

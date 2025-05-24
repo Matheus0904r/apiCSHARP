@@ -4,7 +4,7 @@ using apiAlugueis.Rotas;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<Alugueis>(options => options.UseSqlite("Data Source=alugueis.db"));
+builder.Services.AddDbContext<Locatarios>(options => options.UseSqlite("Data Source=alugueis.db"));
 
 builder.Services.AddCors(options =>
 {
@@ -17,16 +17,13 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors("AllowAll");
 
-// Mapeia as rotas REST
 app.MapGetRoutes();
 app.MapPostRoutes();
 app.MapPutRoutes();
 app.MapDeleteRoutes();
 
-// Popular o banco com dados iniciais, se estiver vazio
 PopularBancoDeDados(app);
 
-// Inicia a aplicação
 app.Run();
 
 void PopularBancoDeDados(WebApplication app)

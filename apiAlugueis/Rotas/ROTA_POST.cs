@@ -6,7 +6,7 @@ public static class Rota_POST
     {
         app.MapPost("/alugueis", async (Pessoa pessoa, Locatarios Dados) =>
         {
-            Dados.Locatarios.Add(pessoa);
+            Dados.Locacoes.Add(pessoa);
             await Dados.SaveChangesAsync();
             return Results.Created($"/alugueis/{pessoa.Id}", pessoa);
         });

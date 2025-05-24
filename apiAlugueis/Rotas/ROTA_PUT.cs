@@ -1,6 +1,4 @@
-// using Microsoft.EntityFrameworkCore;
 using apiAlugueis.Models;
-using apiAlugueis.Models.Locatarios;
 
 public static class Rota_PUT
 {
@@ -8,11 +6,11 @@ public static class Rota_PUT
     {
         app.MapPut("/alugueis/{id}", async (int id, Pessoa pessoa, Locatarios Dados) =>
         {
-            var imovel = await Dados.Locatarios.FindAsync(id);
+            var imovel = await Dados.Locacoes.FindAsync(id);
             if (imovel is null) return Results.NotFound();
 
             pessoa.id_imovel = imovel.id;
-            
+
             await Dados.SaveChangesAsync();
             return Results.Ok(pessoa);
         });

@@ -7,10 +7,10 @@ public static class Rota_DELETE
     {
         app.MapDeleteRoutes("/alugueis/{id}", async (int id, Locatarios Dados) =>
         {
-            var locacao = await Dados.Locatarios.FindAsync(id);
+            var locacao = await Dados.Locacoes.FindAsync(id);
             if (locacao is null) return Results.NotFound();
 
-            Dados.Locatarios.Remove(locacao);
+            Dados.Locacoes.Remove(locacao);
             await Dados.SaveChangesAsync();
             return Results.Ok();
 
