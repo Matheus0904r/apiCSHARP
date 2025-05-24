@@ -14,5 +14,16 @@ public static class Rota_DELETE
             await Dados.SaveChangesAsync();
             return Results.Ok();
         });
+
+        app.MapDelete("/api/imoveis/{id}", async (int id, portifolio Dados) =>
+        {
+            var imovel = await Dados.Imoveis.FindAsync(id);
+            if (imovel is null) return Results.NotFound();
+
+            Dados.Imoveis.Remove(imovel);
+
+            await Dados.SaveChangesAsync();
+            return Results.Ok();
+        });
     }
 }

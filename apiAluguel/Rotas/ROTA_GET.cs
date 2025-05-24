@@ -18,6 +18,19 @@ namespace apiCSHARP.apiAluguel.Rotas
                 var locacao = await Dados.Locacoes.FindAsync(id);
                 return locacao is not null ? Results.Ok(locacao) : Results.NotFound();
             });
+
+
+            app.MapGet("/api/imoveis", async (portifolio Dados) =>
+            {
+                var imoveis = await Dados.Imoveis.ToListAsync();
+                return Results.Ok(imoveis);
+            });
+            app.MapGet("/api/imoveis/{id}", async (int id, portifolio Dados) =>
+            {
+                var imovel = await Dados.Imoveis.FindAsync(id);
+                return imovel is not null ? Results.Ok(imovel) : Results.NotFound();
+            });
+
         }
     }
 }
