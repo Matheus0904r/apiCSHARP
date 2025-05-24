@@ -36,9 +36,9 @@ void PopularBancoDeDados(WebApplication app)
 
     var imoveisIniciais = new List<Imovel>
     {
-        new() { Id = "Apartamento", Endereco = "Rua A, 123", ValorAluguel = 1500, Metragem = 50 },
-        new() { Id = "Casa", Endereco = "Rua B, 456", ValorAluguel = 2000, Metragem = 100 },
-        new() { Id = "Cobertura", Endereco = "Rua C, 789", ValorAluguel = 3000, Metragem = 150 }
+        new() { Id = 1, Endereco = "Rua A, 123", ValorAluguel = 1500, Metragem = 50 },
+        new() { Id = 2, Endereco = "Rua B, 456", ValorAluguel = 2000, Metragem = 100 },
+        new() { Id = 2, Endereco = "Rua C, 789", ValorAluguel = 3000, Metragem = 150 }
     };
 
     var locacoesIniciais = new List<Pessoa>
