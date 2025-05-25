@@ -1,11 +1,32 @@
+using Microsoft.EntityFrameworkCore;
 using apiCSHARP.apiAluguel.Models;
 
 public static class Rota_POST
 {
     public static void MapPostRoutes(this WebApplication app)
     {
-        app.MapPost("/api/alugueis", async (Pessoa pessoa, Locatarios Dados) =>
+        app.MapPost("/api/alugueis", async (Pessoa pessoa, Locatarios Dados, portifolio portifolioDados) =>
         {
+
+            var imovel = await portifolioDados.Imoveis.FindAsync(pessoa.IdImovel);
+            if (imovel == null)
+            {
+                return Results.BadRequest("O imóvel especificado não existe.");
+            }
+
+            var imovelJaAssociado = await Dados.Locacoes.AnyAsync(p => p.IdImovel == pessoa.IdImovel);
+            if (imovelJaAssociado)
+            {
+                return Results.BadRequest("O imóvel já está associado a outra pessoa.");
+            }
+
+            var totalImoveis = await portifolioDados.Imoveis.CountAsync();
+            var totalPessoas = await Dados.Locacoes.CountAsync();
+            if (totalPessoas >= totalImoveis)
+            {
+                return Results.BadRequest("Não há imóveis suficientes disponíveis.");
+            }
+
             Dados.Locacoes.Add(pessoa);
             await Dados.SaveChangesAsync();
             return Results.Created($"/api/alugueis/{pessoa.Id}", pessoa);
