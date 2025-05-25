@@ -20,13 +20,6 @@ public static class Rota_POST
                 return Results.BadRequest("O imóvel já está associado a outra pessoa.");
             }
 
-            var totalImoveis = await portifolioDados.Imoveis.CountAsync();
-            var totalPessoas = await Dados.Locacoes.CountAsync();
-            if (totalPessoas >= totalImoveis)
-            {
-                return Results.BadRequest("Não há imóveis suficientes disponíveis.");
-            }
-
             Dados.Locacoes.Add(pessoa);
             await Dados.SaveChangesAsync();
             return Results.Created($"/api/alugueis/{pessoa.Id}", pessoa);
