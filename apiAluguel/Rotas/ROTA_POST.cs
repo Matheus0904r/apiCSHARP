@@ -11,13 +11,13 @@ public static class Rota_POST
             var imovel = await portifolioDados.Imoveis.FindAsync(pessoa.IdImovel);
             if (imovel == null)
             {
-                return Results.BadRequest("O imóvel especificado não existe.");
+                return Results.BadRequest(new { erro = true, message = "O imóvel especificado não existe." });
             }
 
             var imovelJaAssociado = await Dados.Locacoes.AnyAsync(p => p.IdImovel == pessoa.IdImovel);
             if (imovelJaAssociado)
             {
-                return Results.BadRequest("O imóvel já está associado a outra pessoa.");
+                return Results.BadRequest(new { erro = true, message = "O imóvel já está associado a outra pessoa." });
             }
 
             Dados.Locacoes.Add(pessoa);

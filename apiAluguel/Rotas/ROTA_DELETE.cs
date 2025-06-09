@@ -25,7 +25,7 @@ public static class Rota_DELETE
             var locacao = await locatarios.Locacoes.FirstOrDefaultAsync(l => l.IdImovel == id);
             if (locacao != null)
             {
-                return Results.Conflict("Não é possível excluir o imóvel porque ele está alugado.");
+                return Results.Conflict(new { erro = true,  message = "Não é possível excluir o imóvel porque ele está alugado." });
             }
 
             Dados.Imoveis.Remove(imovel);

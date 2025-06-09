@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "44wBgalm005Y8NEZdEfKMcKaeGn+fqpIFoa3wRJ/Cj0=",
+  "Source": "apiAluguel",
+  "BasePath": "_content/apiAluguel",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

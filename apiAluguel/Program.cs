@@ -21,6 +21,7 @@ app.UseCors("AllowAll");
 app.MapGetRoutes();
 app.MapPostRoutes();
 app.MapDeleteRoutes();
+app.MapPutRoutes();
 
 PopularBancoDeDados(app);
 
