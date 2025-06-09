@@ -70,4 +70,13 @@ Este projeto é um front-end desenvolvido com **HTML**, **Bootstrap 5** e **Java
 3. Os dados da API serão carregados e exibidos automaticamente nas tabelas.
 
 ---
+
+## Filtro (index.html)
+
+Na página de imóveis (`index.html`), é possível filtrar os imóveis pelo campo de endereço.  
+O campo de busca está localizado acima da tabela e permite digitação livre.  
+À medida que o usuário digita, a tabela é atualizada dinamicamente para exibir apenas os imóveis cujo endereço contenha o texto informado (filtro por substring, sem distinção de maiúsculas/minúsculas).
+
+---
+
 Desenvolvido como parte de um sistema de gerenciamento básico de imóveis e locatários.

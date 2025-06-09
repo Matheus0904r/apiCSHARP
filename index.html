@@ -32,7 +32,10 @@
     <div class="container py-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 m-0">Imóveis</h1>
-        <button id="btnNovo" class="btn btn-primary">+ Novo Imóvel</button>
+        <div class="d-flex gap-2">
+          <input type="text" id="searchInput" class="form-control" placeholder="Buscar por endereço..." />
+          <button id="btnNovo" class="btn btn-primary">+ Novo Imóvel</button>
+        </div>
       </div>
 
       <table class="table table-hover shadow rounded" id="itemsTable">
@@ -82,7 +85,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
           </form>
@@ -108,11 +111,20 @@
         renderTabela();
       }
 
+      function filtrarItens() {
+        const termo = document.getElementById("searchInput").value.trim().toLowerCase();
+        if (!termo) return itens;
+        return itens.filter((item) =>
+          item.endereco.toLowerCase().includes(termo)
+        );
+      }
+
       function renderTabela() {
         tbody.innerHTML = "";
         let total = 0;
+        const itensFiltrados = filtrarItens();
 
-        itens.forEach((item) => {
+        itensFiltrados.forEach((item) => {
           total += item.valorAluguel;
           tbody.insertAdjacentHTML(
             "beforeend",
@@ -195,6 +207,8 @@
         await carregarItens();
         itemModal.hide();
       });
+
+      document.getElementById("searchInput").addEventListener("input", renderTabela);
 
       carregarItens();
     </script>

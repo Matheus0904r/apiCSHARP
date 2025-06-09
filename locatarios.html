@@ -32,7 +32,10 @@
   <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h1 class="h3">Locatários</h1>
-      <button id="btnNovo" class="btn btn-primary">+ Novo Locatário</button>
+      <div class="d-flex gap-2">
+        <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nome ou sobrenome..." />
+        <button id="btnNovo" class="btn btn-primary">+ Novo Locatário</button>
+      </div>
     </div>
 
     <table class="table table-hover shadow rounded" id="itemsTable">
@@ -104,9 +107,20 @@
       renderTabela();
     }
 
+    function filtrarItens() {
+      const termo = document.getElementById("searchInput").value.trim().toLowerCase();
+      if (!termo) return itens;
+      return itens.filter((item) =>
+        item.nome.toLowerCase().includes(termo) ||
+        item.sobrenome.toLowerCase().includes(termo)
+      );
+    }
+
     function renderTabela() {
       tbody.innerHTML = "";
-      itens.forEach((item) => {
+      const itensFiltrados = filtrarItens();
+
+      itensFiltrados.forEach((item) => {
         tbody.insertAdjacentHTML("beforeend", `
           <tr>
             <td>${item.nome}</td>
@@ -186,12 +200,12 @@
           return;
         }
       } else {
-        const respoinse = await fetch(`${API_BASE}/alugueis`, {
+        const response = await fetch(`${API_BASE}/alugueis`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
-        const data = await respoinse.json();
+        const data = await response.json();
         if (data.erro) {
           alert(data.message);
           return;
@@ -201,6 +215,8 @@
       await carregarItens();
       itemModal.hide();
     });
+
+    document.getElementById("searchInput").addEventListener("input", renderTabela);
 
     carregarItens();
   </script>
