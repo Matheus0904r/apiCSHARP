@@ -32,6 +32,9 @@ namespace apiAluguel.Migrations
                     b.Property<int>("IdImovel")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("TempoTotalContrato")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("TEXT");

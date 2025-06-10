@@ -40,16 +40,16 @@ void PopularBancoDeDados(WebApplication app)
     {
         var locacoesIniciais = new List<Pessoa>
         {
-            new() { Id = 1, Nome = "João", Sobrenome = "Silva", CPF = "123.456.789-00", IdImovel = 3 },
-            new() { Id = 2, Nome = "Maria", Sobrenome = "Oliveira", CPF = "987.654.321-00", IdImovel = 5 },
-            new() { Id = 3, Nome = "Pedro", Sobrenome = "Santos", CPF = "456.789.123-00", IdImovel = 1 },
-            new() { Id = 4, Nome = "Ana", Sobrenome = "Costa", CPF = "321.654.987-00", IdImovel = 7 },
-            new() { Id = 5, Nome = "Lucas", Sobrenome = "Pereira", CPF = "654.321.987-00", IdImovel = 2 },
-            new() { Id = 6, Nome = "Carla", Sobrenome = "Rocha", CPF = "789.123.456-00", IdImovel = 9 },
-            new() { Id = 7, Nome = "Rafael", Sobrenome = "Fernandes", CPF = "147.258.369-00", IdImovel = 4 },
-            new() { Id = 8, Nome = "Beatriz", Sobrenome = "Alves", CPF = "963.852.741-00", IdImovel = 6 },
-            new() { Id = 9, Nome = "Gustavo", Sobrenome = "Martins", CPF = "258.369.147-00", IdImovel = 10 },
-            new() { Id = 10, Nome = "Fernanda", Sobrenome = "Barbosa", CPF = "369.147.258-00", IdImovel = 8 },
+            new() { Id = 1, Nome = "João", Sobrenome = "Silva", CPF = "123.456.789-00", IdImovel = 3, TempoTotalContrato = 12 },
+            new() { Id = 2, Nome = "Maria", Sobrenome = "Oliveira", CPF = "987.654.321-00", IdImovel = 5, TempoTotalContrato = 24 },
+            new() { Id = 3, Nome = "Pedro", Sobrenome = "Santos", CPF = "456.789.123-00", IdImovel = 1, TempoTotalContrato = 6 },
+            new() { Id = 4, Nome = "Ana", Sobrenome = "Costa", CPF = "321.654.987-00", IdImovel = 7, TempoTotalContrato = 12 },
+            new() { Id = 5, Nome = "Lucas", Sobrenome = "Pereira", CPF = "654.321.987-00", IdImovel = 2, TempoTotalContrato = 12 },
+            new() { Id = 6, Nome = "Carla", Sobrenome = "Rocha", CPF = "789.123.456-00", IdImovel = 9, TempoTotalContrato = 24 },
+            new() { Id = 7, Nome = "Rafael", Sobrenome = "Fernandes", CPF = "147.258.369-00", IdImovel = 4, TempoTotalContrato = 36 },
+            new() { Id = 8, Nome = "Beatriz", Sobrenome = "Alves", CPF = "963.852.741-00", IdImovel = 6, TempoTotalContrato = 8 },
+            new() { Id = 9, Nome = "Gustavo", Sobrenome = "Martins", CPF = "258.369.147-00", IdImovel = 10, TempoTotalContrato = 6 },
+            new() { Id = 10, Nome = "Fernanda", Sobrenome = "Barbosa", CPF = "369.147.258-00", IdImovel = 8, TempoTotalContrato = 6 },
 
         };
 

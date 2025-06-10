@@ -7,5 +7,8 @@ namespace apiCSHARP.apiAluguel.Models
         public string Sobrenome { get; set; }
         public string CPF { get; set; }
         public int IdImovel { get; set; }
+
+        public int TempoTotalContrato { get; set;  }
+
     }
 }

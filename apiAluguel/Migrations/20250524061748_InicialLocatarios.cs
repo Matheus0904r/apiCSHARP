@@ -19,7 +19,8 @@ namespace apiAluguel.Migrations
                     Nome = table.Column<string>(type: "TEXT", nullable: false),
                     Sobrenome = table.Column<string>(type: "TEXT", nullable: false),
                     CPF = table.Column<string>(type: "TEXT", nullable: false),
-                    IdImovel = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdImovel = table.Column<int>(type: "INTEGER", nullable: false),
+                    TempoTotalContrato = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
